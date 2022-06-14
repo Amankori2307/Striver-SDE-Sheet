@@ -1,46 +1,26 @@
-// Sort an array of 0s, 1s and 2s
-// Three Pointer Algorithm | Dutch national flag algorithm
-
-
 #include<iostream>
 #include<vector>
 using namespace std;
 
-
-class Solution{
-    public:
-        void sort(vector<int> &nums){
-            int low = 0, high =  nums.size() - 1;
-            int mid=0;
-            while(mid <= high){
-                if(nums[mid] == 0){
-                    swap(nums[low], nums[mid]);
-                    low++;
-                    mid++;
-                } else if(nums[mid] == 1){
-                    mid++;
-                } else if(nums[mid] == 2){
-                    swap(nums[mid], nums[high]);
-                    high--;
-                }
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        vector<int> count(3, 0);
+        for(int i=0; i<nums.size(); i++){
+            count[nums[i]]++;
+        }
+        
+        for(int i=0; i<3; i++){
+            for(int j=0; j<count[i]; j++){
+                cout << i << ", ";
             }
         }
+    }
 };
 
-int main() {
-    int n;
-    cin >> n;
-    vector<int> nums(n);
-    for(int i=0; i<n; i++){
-        cin >> nums[i];
-    }
 
+int main(){
+    vector<int> nums = {2,0,2,1,1,0};
     Solution s;
-    s.sort(nums);
-    for(int i=0; i<n; i++){
-        cout << nums[i] << " ";
-    }
-    cout << endl;
-
-    return 0;
+    s.sortColors(nums);
 }
