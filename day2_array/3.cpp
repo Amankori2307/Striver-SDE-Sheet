@@ -9,6 +9,7 @@ class Solution{
                 cout << item << " ";
             }
             cout << endl;
+            nullptr
         }
 
         void merge(vector<int> a, vector<int> b){
@@ -27,6 +28,9 @@ class Solution{
             }
             display(a);
             display(b);
+        }
+        void merge2(vector<int> a,){
+
         }
 };
 
