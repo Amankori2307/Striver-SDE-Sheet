@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.svg": "analytics",
+        "vector": "cpp"
+    }
+}
